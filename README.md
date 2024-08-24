@@ -58,7 +58,7 @@ Identifies customers who bought AirPods after buying an iPhone.
 Identifies customers who bought only AirPods and iPhones.
 
 #### Class: `ThirdTransformer`
-Provides the filtered DataFrame where customers bought AirPods after buying an iPhone.
+Average time-delay between buying iPhone and Airpods
 
 ### Workflow
 #### Class: `FirstWorkFlow`
@@ -76,11 +76,11 @@ Provides the filtered DataFrame where customers bought AirPods after buying an i
   - Loads the results into the destination using `OnlyAirpodsandIphoneLoader`.
 
 #### Class: `ThirdWorkFlow`
-- **Objective:** Filters data for customers who bought AirPods after buying an iPhone.
+- **Objective:** Average time-delay between buying iPhone and Airpods
 - **Steps:** 
   - Extracts required data using `AirpodsAfterIphoneExtractor`.
   - Transforms the data using `ThirdTransformer`.
-  - Displays the transformed data.
+  - Loads the results into the destination using `AveragetimeLoader`.
 
 #### Class: `WorkFlowRunner`
 - **Objective:** Runs the specified workflow.
@@ -97,6 +97,9 @@ Sinks the data into the DBFS path for AirPods after iPhone purchases.
 
 #### Class: `OnlyAirpodsandIphoneLoader`
 Sinks the data into the DBFS path and Delta Table for only AirPods and iPhone purchases.
+
+#### Class: `AveragetimeLoader`
+Sinks the data into the DBFS path for Average Time Delay.
 
 ## How to Run
 1. Ensure all data files (`Customer_Updated.csv`, `Products_Updated.csv`, `Transaction_Updated.csv`) are available in DBFS.
